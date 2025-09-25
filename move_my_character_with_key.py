@@ -68,4 +68,8 @@ while running:
 
     handle_events()
 
+    if not (dir_x==1 or dir_x== -1):
+        x += dir_x *5
+        y += dir_y *5
+
 close_canvas()
