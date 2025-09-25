@@ -26,6 +26,7 @@ def draw_character(animation,frame):
 def handle_events():
     global running
     global dir_x,dir_y
+    global x,y
 
     events = get_events()
     for event in events:
@@ -51,6 +52,14 @@ def handle_events():
                 dir_y -= 1
             elif event.key == SDLK_DOWN:
                 dir_y += 1
+    if x<30:
+        x=30
+    if x>TUK_WIDTH-30:
+        x=TUK_WIDTH-30
+    if y<50:
+        y=50
+    if y>TUK_HEIGHT-50:
+        y=TUK_HEIGHT-50
 
 while running:
 
@@ -68,6 +77,7 @@ while running:
     draw_character(animations,frame)
 
     handle_events()
+
     if not(dir_x==1 or dir_x==-1):
         x += dir_x *5
     y += dir_y *10
